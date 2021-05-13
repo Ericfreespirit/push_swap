@@ -6,7 +6,7 @@
 /*   By: eriling <eriling@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 14:45:11 by eriling           #+#    #+#             */
-/*   Updated: 2021/05/13 16:49:06 by eriling          ###   ########.fr       */
+/*   Updated: 2021/05/13 16:59:59 by eriling          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ int	check_input (int ac, char **av)
 
 	i = 1;
 	j = 2;
-	while (i < ac - 1)
+	while (i < ac)
 	{
 		if (ft_atol(av[i]) > 2147483647 || ft_atol(av[i]) < -2147483648)
 			return (1);
 
 		while (j < ac)
 		{
-			printf("i:%ld\n", ft_atol(av[i]));
-			printf("j:%ld\n\n", ft_atol(av[j]));
-			if (ft_atol(av[i]) == ft_atol(av[j]))
+			printf("i(%d):%ld\n", i,ft_atol(av[i]));
+			printf("j(%d):%ld\n\n", j,ft_atol(av[j]));
+			if (ft_atol(av[i]) == ft_atol(av[j]) && (i != j))
 				return (1);
 			j++;
 		}
